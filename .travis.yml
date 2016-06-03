@@ -9,5 +9,5 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 script:
   - npm test
-  - ( cd ./example ; ./makeBundle.sh ; firefox index.html )
+  - ls -l
   - echo doesnt do this yet -- karma start --browsers Firefox --single-run

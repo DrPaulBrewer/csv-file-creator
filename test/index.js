@@ -49,3 +49,54 @@ describe(
 	});
     }
 );
+
+describe('browserify bundling the example and module code ', function(){
+    var error = 0;
+    var bundleFileName = "./example/csv-file-creator-example-bundle.js";
+    before(function(done){
+	try {
+	    fs.unliknkSync(bundleFileName);
+	} catch(e){}
+	exec('cd ./example && ./makeBundle.sh', 
+	     function(e,stdout,stderr){
+		 error = e;
+		 done();
+	     });
+    });
+    after(function(){
+	try {
+	    fs.unlinkSync(bundleFileName);
+	} catch(e) {}
+    });
+    it('should run without throwing an error', function(){
+	assert.ok(!error, error);
+    });
+    it('should create the bundle file '+bundleFileName, function(){
+	fs.accessSync(bundleFileName, fs.F_OK);
+    });
+});
+
+describe('running example in firefox ', function(){
+    before(function(done){
+	var firefox;
+	try {
+	    fs.unlinkSync("./dicerolls.csv");
+	} catch(e){}
+	var forceQuit = function(){
+	    firefox.kill();
+	    done();
+	};
+	setTimeout(forceQuit, 10000);
+	firefox = exec("firefox example/index.html", 
+		       function(e, stdout, stderr){});
+    });
+    after(function(){
+	try {
+	    fs.unlinkSync("./dicerolls.csv");
+	} catch(e) {};
+    });
+    it('should create the file dicerolls.csv',
+       function(){
+	   fs.accessSync("./dicerolls.csv", fs.F_OK);
+       });
+});
