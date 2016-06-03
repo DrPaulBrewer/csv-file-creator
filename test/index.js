@@ -85,13 +85,13 @@ describe('running example in firefox ', function(){
 	} catch(e){}
 	var forceQuit = function(){
 	    firefox.kill();
-	    done();
 	};
 	setTimeout(forceQuit, 10000);
 	firefox = exec("firefox file://example/index.html", 
 		       function(e, stdout, stderr){
 			   error=e;
 			   mystderr=stderr;
+			   done();
 		       });
     });
     after(function(){
