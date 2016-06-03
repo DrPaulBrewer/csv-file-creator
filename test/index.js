@@ -2,6 +2,9 @@ const assert = require('assert');
 const exec = require('child_process').exec;
 const fs = require('fs');
 
+var bundleFileName = "./example/csv-file-creator-example-bundle.js";
+
+
 describe(
     'run 10000 dice rolls csv generation example via "npm example"',
     function(){
@@ -52,7 +55,6 @@ describe(
 
 describe('browserify bundling the example and module code ', function(){
     var error = 0;
-    var bundleFileName = "./example/csv-file-creator-example-bundle.js";
     before(function(done){
 	try {
 	    fs.unliknkSync(bundleFileName);
@@ -62,11 +64,6 @@ describe('browserify bundling the example and module code ', function(){
 		 error = e;
 		 done();
 	     });
-    });
-    after(function(){
-	try {
-	    fs.unlinkSync(bundleFileName);
-	} catch(e) {}
     });
     it('should run without throwing an error', function(){
 	assert.ok(!error, error);
@@ -78,6 +75,11 @@ describe('browserify bundling the example and module code ', function(){
 
 describe('running example in firefox ', function(){
     var error=0, mystderr=0;
+    after(function(){
+	try {
+	    fs.unlinkSync(bundleFileName);
+	} catch(e) {}
+    });
     before(function(done){
 	var firefox;
 	try {
@@ -85,13 +87,13 @@ describe('running example in firefox ', function(){
 	} catch(e){}
 	var forceQuit = function(){
 	    firefox.kill();
+	    done();
 	};
 	setTimeout(forceQuit, 10000);
-	firefox = exec("firefox file://example/index.html", 
+	firefox = exec("firefox "+bundleFileName, 
 		       function(e, stdout, stderr){
 			   error=e;
 			   mystderr=stderr;
-			   done();
 		       });
     });
     after(function(){
