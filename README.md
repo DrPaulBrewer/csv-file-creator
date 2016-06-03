@@ -1,6 +1,8 @@
 csv-file-creator
 -----
 
+[![Build Status](https://travis-ci.org/DrPaulBrewer/csv-file-creator.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/csv-file-creator)
+
 ##install
 
     npm i csv-file-creator -S
@@ -24,7 +26,7 @@ Using `require("csv-file-creator")` on the browser typically requires using [bro
 
  * automated testing of browsers seems to be blocked by modal dialogue boxes for "save-as" and the like.  If you know of an automated testing solution that can test muliple browsers and avoids the file dialogue box, please open an issue and let me know. For now, we have to be satisfied with testing the csv string for correct content.  
 
- * browser-dependent limitations may exist on the size of datafiles produced in this way.
+ * browser-dependent limitations may exist on the size of datafiles produced in this way. For instance, currently 10,000 rows x 2 cols works OK in Firefox, but 100,000 rows x 2 cols gives an error.
 
  * row format written is "field","field","field",...,"field"\n
 
