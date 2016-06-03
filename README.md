@@ -50,12 +50,23 @@ The targeted application is writing out small-medium csv files for use by an end
 
     var data = [['roll','diceResult']];
     var i,l;
-    /* generate data consisting of 10 rolls of a six sided "random" die */
+    /* generate data consisting of 10000 rolls of a six sided "random" die */
     /* the data should be an array of array of numbers or strings */
-    for(i=1,l=10;i<=l;++i) 
+    for(i=1,l=10000;i<=l;++i) 
         data[i] = [i, 1+Math.floor(6*Math.random())];
     /* output the csv file */
     csvFileCreator("dicerolls.csv", data);
+
+##test it out quickly on your web server / web browser
+
+On your web server
+
+    cd /path/to/your/webserver/directory/
+    git clone http://github.com/drpaulbrewer/csv-file-creator
+    
+On your web browser, visit http://your.web.address/path/to/csv-file-creator/example/index.html
+
+When done, be sure to remove the unneeeded files.
 
 ##custom error handling
 
