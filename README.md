@@ -21,6 +21,8 @@ Using `require("csv-file-creator")` on the browser typically requires using [bro
 
 Limitations: 
 
+ * browser-dependent limitations may exist on the size of datafiles produced in this way.
+
  * row format written is "field","field","field",...,"field"\n
 
  * any zero length rows will written as '""\n'.  
