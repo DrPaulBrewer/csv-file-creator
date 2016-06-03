@@ -77,6 +77,7 @@ describe('browserify bundling the example and module code ', function(){
 });
 
 describe('running example in firefox ', function(){
+    var error=0, mystderr=0;
     before(function(done){
 	var firefox;
 	try {
@@ -88,12 +89,18 @@ describe('running example in firefox ', function(){
 	};
 	setTimeout(forceQuit, 10000);
 	firefox = exec("firefox example/index.html", 
-		       function(e, stdout, stderr){});
+		       function(e, stdout, stderr){
+			   error=e;
+			   mystderr=stderr;
+		       });
     });
     after(function(){
 	try {
 	    fs.unlinkSync("./dicerolls.csv");
 	} catch(e) {};
+    });
+    it('should run firefox without error', function(){
+	assert(!error, error+" "+mystderr);
     });
     it('should create the file dicerolls.csv',
        function(){
