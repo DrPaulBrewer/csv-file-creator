@@ -90,7 +90,7 @@ describe('running example in firefox ', function(){
 	    setTimeout(done, 5000);
 	};
 	setTimeout(forceQuit, 10000);
-	firefox = exec("firefox "+bundleFileName, 
+	firefox = exec('cd ./example && firefox index.html', 
 		       function(e, stdout, stderr){
 			   error=e;
 			   mystderr=stderr;
