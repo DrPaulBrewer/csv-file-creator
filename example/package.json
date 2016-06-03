@@ -1,0 +1,14 @@
+{
+  "name": "csv-file-creator-example",
+  "version": "0.1.0",
+  "description": "test example for csv-file-creator, writes 100k d6 die rolls to dicerolls.csv",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "drpaulbrewer@eaftc.com",
+  "license": "MIT",
+  "dependencies": {
+    "csv-file-creator": "*"
+  }
+}
