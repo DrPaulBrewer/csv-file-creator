@@ -38,7 +38,7 @@ Using `require("csv-file-creator")` on the browser typically requires using [bro
 
  * when used on nodejs, files will be written on the server only.
 
- * when used on the browser, files will be written on the browser only.
+ * when used on the browser, files will be written on the user's computer only.
 
  * only works on recent browsers
 
