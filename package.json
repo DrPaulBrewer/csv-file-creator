@@ -12,7 +12,7 @@
     "url": "git+https://github.com/drpaulbrewer/csv-file-creator.git"
   },
   "keywords": [
-    "download",
+    "export-to-csv",
     "csv"
   ],
   "author": "drpaulbrewer@eaftc.com",
