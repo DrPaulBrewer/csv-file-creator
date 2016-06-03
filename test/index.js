@@ -65,6 +65,11 @@ describe('browserify bundling the example and module code ', function(){
 		 done();
 	     });
     });
+    after(function(){
+	try {
+	    fs.unlinkSync(bundleFileName);
+	} catch(e) {}
+    });
     it('should run without throwing an error', function(){
 	assert.ok(!error, error);
     });
@@ -73,7 +78,9 @@ describe('browserify bundling the example and module code ', function(){
     });
 });
 
-/* the bundle is left over from the previous test */
+/* 
+ * disable automated firefox testing.  Modal dialogue download/save-as box blocks testing 
+ * the export-to-file functionality.
 
 describe('running example in firefox ', function(){
     var error=0, mystderr=0;
@@ -111,3 +118,6 @@ describe('running example in firefox ', function(){
 	   fs.accessSync("./dicerolls.csv", fs.F_OK);
        });
 });
+
+
+*/

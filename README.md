@@ -20,6 +20,9 @@ Using `require("csv-file-creator")` on the browser typically requires using [bro
 `data: Array[Array[number|string]]` array of rows, each row itself an array of numbers and/or strings. Each row can be a different length. 
 
 ##Limitations: 
+ * automated testing can only test nodejs functionality
+
+ * automated testing of browsers seems to be blocked by modal dialogue boxes for "save-as" and the like.  If you know of an automated testing solution that can test muliple browsers and avoids the file dialogue box, please open an issue and let me know. For now, we have to be satisfied with testing the csv string for correct content.  
 
  * browser-dependent limitations may exist on the size of datafiles produced in this way.
 
