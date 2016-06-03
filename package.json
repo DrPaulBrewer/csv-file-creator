@@ -1,6 +1,7 @@
 {
   "name": "csv-file-creator",
   "version": "1.0.3",
+  "reveal": true,
   "description": "isomorphic js to create .csv file from data array on browsers or node",
   "main": "index.js",
   "scripts": {
