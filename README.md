@@ -19,7 +19,7 @@ Using `require("csv-file-creator")` on the browser typically requires using [bro
 
 `data: Array[Array[number|string]]` array of rows, each row itself an array of numbers and/or strings. Each row can be a different length. 
 
-Limitations: 
+##Limitations: 
 
  * browser-dependent limitations may exist on the size of datafiles produced in this way.
 
@@ -34,7 +34,12 @@ Limitations:
  * when used on nodejs, files will be written on the server only.
 
  * when used on the browser, files will be written on the browser only.
+
  * only works on recent browsers
+
+### Why are there no callbacks for successful creation, only errors?
+
+The targeted application is writing out small-medium csv files for use by an end user or developer.  Further automated processing of these files is not envisioned.  On the browser-side, which is the primary target, there is currently (2016) no automated means of reading a file from the users file system into the browser, because of security considerations the user must manually select an existing file.  
 
 ##example - make a csv file from simulated dice roll data
 
