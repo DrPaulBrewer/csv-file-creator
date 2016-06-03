@@ -14,7 +14,8 @@
   },
   "keywords": [
     "export-to-csv",
-    "csv"
+    "csv",
+    "isomorphic"
   ],
   "author": "drpaulbrewer@eaftc.com",
   "license": "MIT",
