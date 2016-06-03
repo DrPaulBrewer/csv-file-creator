@@ -88,7 +88,7 @@ describe('running example in firefox ', function(){
 	    done();
 	};
 	setTimeout(forceQuit, 10000);
-	firefox = exec("firefox example/index.html", 
+	firefox = exec("firefox file://example/index.html", 
 		       function(e, stdout, stderr){
 			   error=e;
 			   mystderr=stderr;
