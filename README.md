@@ -88,3 +88,4 @@ Stack Overflow Contributors adaneo and Manu Sharma
 Based on code from html5csv.js and 
 [this Stack Overflow posting](http://stackoverflow.com/questions/17836273/export-javascript-data-to-csv-file-without-server-interaction)
 
+##License: MIT
