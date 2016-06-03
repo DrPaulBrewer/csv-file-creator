@@ -73,6 +73,8 @@ describe('browserify bundling the example and module code ', function(){
     });
 });
 
+/* the bundle is left over from the previous test */
+
 describe('running example in firefox ', function(){
     var error=0, mystderr=0;
     after(function(){
