@@ -45,6 +45,8 @@ where:
 
 `data: Array[Array[number|string]]` is an array of rows, each row itself an array of numbers and/or strings. Each row can be a different length. 
 
+There is no return value.  The function will attempt to cause a csv file containing the data to be written out from a browser to the user's filesystem, or from nodejs to the host's filesystem.  In this form there is no indication of success or failure.  The creation process itself is asynchronous on nodeJS, and usually involves a modal "save file" dialogue on the browser.  In some browsers the modal save file dialogue can be disabled manually by the user, but not from browser javascript code.
+
 ##
 
 ##Limitations: 
