@@ -1,6 +1,23 @@
-/* jshint node:true,esnext:true,eqeqeq:true,undef:true,lastsemic:true,strict:true,unused:true */
+/* jshint node:true,esnext:true,eqeqeq:true,undef:true,lastsemic:true,unused:false */
 /* globals fs:true, window:true, document:true, navigator:true, Blob:false */
 
+/* detect if window and document exist, if they do not, set them false */
+
+(function(){
+    var win,doc;
+    // set window and document to false if they do not exist
+    // and defines fs
+    try { 
+	/* next assignment fails on nodejs, are OK on browser */
+	win = window;
+    } catch(e){ 
+	window = false; 
+	document = false;
+	fs = require('fs');
+    }
+})();
+
+/* jshint strict:true, unused:true */
 module.exports = function(fname, rows, onError){
     "use strict";
     /* writes Array-of-Array data in rows in csvfile format to fname */

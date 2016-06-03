@@ -5,16 +5,15 @@ csv-file-creator
 
     npm i csv-file-creator -S
 
-use on browser via browserify
-
 ##instantiate
 
     const csvFileCreator = require('csv-file-creator');
 
+Using `require("csv-file-creator")` on the browser typically requires using [browserify](http://browserify.org/) to bundle your code with the module code.
+
 ##call
 
-    csvFileCreator(fname, data)
-
+    csvFileCreator(fname, data);
 
 `fname: string` the filename to create, i.e. "data.csv"
 
@@ -41,8 +40,8 @@ Limitations:
     var i,l;
     /* generate data consisting of 10 rolls of a six sided "random" die */
     /* the data should be an array of array of numbers or strings */
-    for(i=0,l=10;i<l;++i) 
-        data[i] = [i+1, 1+Math.floor(6*Math.random())];
+    for(i=1,l=10;i<=l;++i) 
+        data[i] = [i, 1+Math.floor(6*Math.random())];
     /* output the csv file */
     csvFileCreator("dicerolls.csv", data);
 
