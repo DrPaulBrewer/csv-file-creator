@@ -108,7 +108,7 @@ In the error callback:
 
 `error` is a string containing an error message
 
-`fname` is the file name passed to csvFileCreator, here `"fubar.csv"`
+`fname` is the file name passed to createCSVFile, here `"fubar.csv"`
 
 # Principle of Operation
 
