@@ -9,7 +9,7 @@ csv-file-creator
 
 ##instantiate it, rename it
 
-`require(csv-file-creator)` will return a JS function, but a JS function can not have spaces in the name, so you will have to call it something else.  
+`require(csv-file-creator)` will return a JS function, but a JS function can not have dashes in the name, so you will have to call it something else.  
 
 Perhaps:
 
