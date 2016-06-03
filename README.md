@@ -7,19 +7,45 @@ csv-file-creator
 
     npm i csv-file-creator -S
 
-##instantiate
+##instantiate it, rename it
 
-    const csvFileCreator = require('csv-file-creator');
+`require(csv-file-creator)` will return a JS function, but a JS function can not have spaces in the name, so you will have to call it something else.  
+
+Perhaps:
+
+    const createCSVFile = require('csv-file-creator');
+    
+or maybe:
+
+    var csvFileCreator = require('csv-file-creator')
+    
+though I think most people reading code later would probably prefer the first form. 
+
+You can name it anything you like via assignment:
+
+    var anythingYouLike = require('csv-file-creator')
+    
+provided you call it consistently later.
+
+    anythingYouLike(fname, data);
+    
+##browserify
 
 Using `require("csv-file-creator")` on the browser typically requires using [browserify](http://browserify.org/) to bundle your code with the module code.
 
-##call
+##calling it
 
-    csvFileCreator(fname, data);
+Assuming it is instantiated as `const createCSVFile = require('csv-file-creator');` call it like this:
 
-`fname: string` the filename to create, i.e. "data.csv"
+    createCSVFile(fname, data);
+    
+where:
 
-`data: Array[Array[number|string]]` array of rows, each row itself an array of numbers and/or strings. Each row can be a different length. 
+`fname: string` is the filename to create, i.e. "data.csv"
+
+`data: Array[Array[number|string]]` is an array of rows, each row itself an array of numbers and/or strings. Each row can be a different length. 
+
+##
 
 ##Limitations: 
  * automated testing can only test nodejs functionality
@@ -48,6 +74,7 @@ The targeted application is writing out small-medium csv files for use by an end
 
 ##example - make a csv file from simulated dice roll data
 
+    const createCSVFile = require('csv-file-creator');
     var data = [['roll','diceResult']];
     var i,l;
     /* generate data consisting of 10000 rolls of a six sided "random" die */
@@ -55,7 +82,7 @@ The targeted application is writing out small-medium csv files for use by an end
     for(i=1,l=10000;i<=l;++i) 
         data[i] = [i, 1+Math.floor(6*Math.random())];
     /* output the csv file */
-    csvFileCreator("dicerolls.csv", data);
+    createCSVFile("dicerolls.csv", data);
 
 ##test it out quickly on your web server / web browser
 
@@ -70,7 +97,7 @@ When done, be sure to remove the unneeeded files.
 
 ##custom error handling
 
-    csvFileCreator("fubar.csv", data, function(error, fname){ 
+    createCSVFile("fubar.csv", data, function(error, fname){ 
          //do something
     });
 
