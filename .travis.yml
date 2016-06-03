@@ -1,13 +1,8 @@
-addons:
-  firefox: latest
 language: node_js
 node_js:
   - "4"
 before_script:
   - npm i -g browserify -D
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
 script:
   - npm test
-  - ls -l
-  - echo doesnt do this yet -- karma start --browsers Firefox --single-run
+
