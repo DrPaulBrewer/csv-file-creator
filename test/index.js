@@ -87,7 +87,7 @@ describe('running example in firefox ', function(){
 	} catch(e){}
 	var forceQuit = function(){
 	    firefox.kill();
-	    done();
+	    setTimeout(done, 5000);
 	};
 	setTimeout(forceQuit, 10000);
 	firefox = exec("firefox "+bundleFileName, 

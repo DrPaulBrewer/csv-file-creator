@@ -4,7 +4,7 @@
   "description": "isomorphic js to create .csv file from data array on browsers or node",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --reporter spec --timeout 15000",
+    "test": "node_modules/.bin/mocha --reporter spec --timeout 20000",
     "example": "node example/example.js"
   },
   "repository": {
