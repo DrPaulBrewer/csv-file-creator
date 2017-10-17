@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/drpaulbrewer/csv-file-creator#readme",
   "devDependencies": {
-    "mocha": "^2.5.3"
+    "mocha": "^4.0.1"
   }
 }
