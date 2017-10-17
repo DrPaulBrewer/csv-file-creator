@@ -1,6 +1,8 @@
 csv-file-creator
 -----
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DrPaulBrewer/csv-file-creator.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/DrPaulBrewer/csv-file-creator.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/csv-file-creator)
 
 ##install
