@@ -5,11 +5,11 @@ csv-file-creator
 
 [![Build Status](https://travis-ci.org/DrPaulBrewer/csv-file-creator.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/csv-file-creator)
 
-##install
+## install
 
     npm i csv-file-creator -S
 
-##instantiate it, rename it
+## instantiate it, rename it
 
 `require(csv-file-creator)` will return a JS function, but a JS function can not have dashes in the name, so you will have to call it something else.  
 
@@ -31,11 +31,11 @@ provided you call it consistently later.
 
     anythingYouLike(fname, data);
     
-##browserify
+## browserify
 
 Using `require("csv-file-creator")` on the browser typically requires using [browserify](http://browserify.org/) to bundle your code with the module code.
 
-##calling it
+## calling it
 
 Assuming it is instantiated as `const createCSVFile = require('csv-file-creator');` call it like this:
 
@@ -51,7 +51,7 @@ There is no return value.  The function will attempt to cause a csv file contain
 
 ##
 
-##Limitations: 
+## Limitations: 
  * automated testing can only test nodejs functionality
 
  * automated testing of browsers seems to be blocked by modal dialogue boxes for "save-as" and the like.  If you know of an automated testing solution that can test muliple browsers and avoids the file dialogue box, please open an issue and let me know. For now, we have to be satisfied with testing the csv string for correct content.  
@@ -76,7 +76,7 @@ There is no return value.  The function will attempt to cause a csv file contain
 
 The targeted application is writing out small-medium csv files for use by an end user or developer.  Further automated processing of these files is not envisioned.  On the browser-side, which is the primary target, there is currently (2016) no automated means of reading a file from the users file system into the browser, because of security considerations the user must manually select an existing file.  
 
-##example - make a csv file from simulated dice roll data
+## example - make a csv file from simulated dice roll data
 
     const createCSVFile = require('csv-file-creator');
     var data = [['roll','diceResult']];
@@ -88,7 +88,7 @@ The targeted application is writing out small-medium csv files for use by an end
     /* output the csv file */
     createCSVFile("dicerolls.csv", data);
 
-##test it out quickly on your web server / web browser
+## test it out quickly on your web server / web browser
 
 On your web server
 
@@ -99,7 +99,7 @@ On your web browser, visit http://your.web.address/path/to/csv-file-creator/exam
 
 When done, be sure to remove the unneeeded files.
 
-##custom error handling
+## custom error handling
 
     createCSVFile("fubar.csv", data, function(error, fname){ 
          //do something
@@ -121,7 +121,7 @@ appropriate code is run to create a file containing a copy of the data
 formatted as a quoted, comma separated file, or csv file.  
 
 
-##Copyright 2016
+## Copyright 2016
 
 Paul Brewer, Economic and Financial Technology Consulting LLC
 
@@ -130,4 +130,4 @@ Stack Overflow Contributors adaneo and Manu Sharma
 Based on code from html5csv.js and 
 [this Stack Overflow posting](http://stackoverflow.com/questions/17836273/export-javascript-data-to-csv-file-without-server-interaction)
 
-##License: MIT
+## License: MIT
